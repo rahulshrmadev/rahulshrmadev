@@ -865,6 +865,7 @@
                 isDeleting = false;
                 currentText = (currentText + 1) % texts.length;
             }
+            
 
             const speed = isDeleting ? 50 : isEnd ? 100 : 150;
             setTimeout(type, speed);
