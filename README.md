@@ -785,7 +785,7 @@
             <h3 class="section-title">🙏 Support My Work</h3>
             <div class="code-block">
                 git clone https://github.com/rahulshrmadev ❤️
-                                <br>
+                <br>
                 npm install appreciation<br>
                 yarn add encouragement<br>
                 <br>
