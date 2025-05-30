@@ -785,3 +785,104 @@
             <h3 class="section-title">🙏 Support My Work</h3>
             <div class="code-block">
                 git clone https://github.com/rahulshrmadev ❤️
+                                <br>
+                npm install appreciation<br>
+                yarn add encouragement<br>
+                <br>
+                # Your support means the world!<br>
+                # Let's build something amazing together 🚀
+            </div>
+            <p>If you like what I do, feel free to:</p>
+            <div class="connect-buttons">
+                <a href="https://github.com/rahulshrmadev" class="connect-btn btn-linkedin">
+                    ⭐ Star My Repos
+                </a>
+                <a href="https://github.com/sponsors/rahulshrmadev" class="connect-btn btn-gmail">
+                    💖 Sponsor Me
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Create starfield
+        const starfield = document.getElementById('starfield');
+        for (let i = 0; i < 200; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.width = `${Math.random() * 3}px`;
+            star.style.height = star.style.width;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            star.style.opacity = Math.random();
+            starfield.appendChild(star);
+        }
+
+        // Create floating particles
+        for (let i = 0; i < 15; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.animationDelay = `${Math.random() * 8}s`;
+            particle.style.width = `${4 + Math.random() * 4}px`;
+            particle.style.height = particle.style.width;
+            document.body.appendChild(particle);
+        }
+
+        // Typing animation
+        const typingText = document.getElementById('typingText');
+        const texts = [
+            "Full-Stack Developer 💻", 
+            "System Engineer 🖥️",
+            "RL Enthusiast 🤖",
+            "Open Source Contributor 🌍",
+            "Problem Solver 🧩"
+        ];
+        let currentText = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isEnd = false;
+
+        function type() {
+            const fullText = texts[currentText];
+            
+            if (isDeleting) {
+                typingText.textContent = fullText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = fullText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === fullText.length) {
+                isEnd = true;
+                setTimeout(() => {
+                    isDeleting = true;
+                }, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                currentText = (currentText + 1) % texts.length;
+            }
+
+            const speed = isDeleting ? 50 : isEnd ? 100 : 150;
+            setTimeout(type, speed);
+            
+            if (isEnd) isEnd = false;
+        }
+
+        setTimeout(type, 1000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
